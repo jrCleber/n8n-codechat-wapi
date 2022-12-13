@@ -1,0 +1,18 @@
+{
+	"node": "n8n-nodes-base.codechatapi",
+	"nodeVersion": "1.0",
+	"codexVersion": "1.0",
+	"categories": ["Communication","Development"],
+	"resources": {
+		"credentialDocumentation": [
+			{
+				"url": "https://github.com/code-chat-br/whatsapp-api"
+			}
+		],
+		"primaryDocumentation": [
+			{
+				"url": "https://github.com/code-chat-br/whatsapp-api"
+			}
+		]
+	}
+}
