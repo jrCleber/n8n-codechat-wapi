@@ -11,9 +11,6 @@
 
 <div align="center"><img src="./assets/cover.png"></div>
 
-
-![Banner image](./assets/cover.png)
-
 # n8n-nodes-codechat-wapi
 
 This is a [N8n](https://community.n8n.io) community node. It allows you to use [WhatsApp Api](https://github.com/code-chat-br/whatsapp-api) which is a stripped down version of the official [CodeChat](https://github.com/code-chat-br) api to communicate with WhatsApp in your workflow.
