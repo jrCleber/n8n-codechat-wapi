@@ -1,401 +1,378 @@
 {
-  "name": "CodeChat",
-  "nodes": [
-    {
-      "parameters": {},
-      "id": "75981bf7-20dd-4163-a2ac-1c4a4fe14efa",
-      "name": "On clicking 'execute'",
-      "type": "n8n-nodes-base.manualTrigger",
-      "typeVersion": 1,
-      "position": [
-        -5440,
-        -2060
-      ]
-    },
-    {
-      "parameters": {
-        "number": "={{ $json[\"number\"] }}",
-        "dalay": "={{ $json[\"options\"][\"delay\"] }}",
-        "textProperty": "={{ $json[\"textMessage\"][\"text\"] }}"
-      },
-      "id": "fda9d81f-3862-4889-b11b-63a8ce4885ef",
-      "name": "CodeChat Api",
-      "type": "n8n-nodes-codechat-wapi.codechatapi",
-      "typeVersion": 1,
-      "position": [
-        -4980,
-        -2060
-      ],
-      "credentials": {
-        "codeChatCredsApi": {
-          "id": "3",
-          "name": "CodeChat Creds"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "httpMethod": "POST",
-        "path": "f21c9cbb-f530-4172-988f-cdc315104fc3",
-        "options": {}
-      },
-      "id": "bf6d3bad-91e3-4130-8406-41d8260256a3",
-      "name": "Webhook",
-      "type": "n8n-nodes-base.webhook",
-      "typeVersion": 1,
-      "position": [
-        -5820,
-        -1680
-      ],
-      "webhookId": "f21c9cbb-f530-4172-988f-cdc315104fc3"
-    },
-    {
-      "parameters": {
-        "number": "={{ $json[\"number\"] }}",
-        "dalay": "={{ $json[\"options\"][\"delay\"] }}",
-        "operation": "buttonMessage",
-        "titleProperty": "={{ $json[\"buttonMessage\"][\"title\"] }}",
-        "descriptionProperty": "={{ $json[\"buttonMessage\"][\"description\"] }}",
-        "footerTextProperty": "={{ $json[\"buttonMessage\"][\"footerText\"] }}",
-        "buttonsProperty": "={{ $json[\"buttonMessage\"][\"buttons\"] }}",
-        "mediaMessageProperty": {
-          "mediaProperty": {
-            "fileNameProperty": "={{ $json[\"mediaMessage\"][\"fileName\"] }}",
-            "mediaProperty": "={{ $json[\"mediaMessage\"][\"media\"] }}"
-          }
-        }
-      },
-      "id": "8d3c4f7d-5cde-4da8-83a1-ba256bffbab5",
-      "name": "CodeChat Api1",
-      "type": "n8n-nodes-codechat-wapi.codechatapi",
-      "typeVersion": 1,
-      "position": [
-        -4980,
-        -1880
-      ],
-      "credentials": {
-        "codeChatCredsApi": {
-          "id": "3",
-          "name": "CodeChat Creds"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "number": "={{ $json[\"number\"] }}",
-        "dalay": "={{ $json[\"options\"][\"delay\"] }}",
-        "operation": "contactMessage",
-        "contactsProperty": "={{ $json[\"contactMessage\"] }}"
-      },
-      "id": "a22b39d4-17d7-4a00-bee5-9f65ecc43457",
-      "name": "CodeChat Api2",
-      "type": "n8n-nodes-codechat-wapi.codechatapi",
-      "typeVersion": 1,
-      "position": [
-        -4980,
-        -1700
-      ],
-      "credentials": {
-        "codeChatCredsApi": {
-          "id": "3",
-          "name": "CodeChat Creds"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "number": "={{ $json[\"number\"] }}",
-        "dalay": "={{ $json[\"options\"][\"delay\"] }}",
-        "operation": "listMessage",
-        "titleProperty": "={{ $json[\"listMessage\"][\"title\"] }}",
-        "descriptionProperty": "={{ $json[\"listMessage\"][\"description\"] }}",
-        "buttonTextProperty": "={{ $json[\"listMessage\"][\"buttonText\"] }}",
-        "footerTextProperty": "={{ $json[\"listMessage\"][\"footerText\"] }}",
-        "sectionProperty": "={{ $json[\"listMessage\"][\"sections\"] }}"
-      },
-      "id": "1ce9014b-251f-4460-9028-8bad4170944a",
-      "name": "CodeChat Api3",
-      "type": "n8n-nodes-codechat-wapi.codechatapi",
-      "typeVersion": 1,
-      "position": [
-        -4980,
-        -1520
-      ],
-      "credentials": {
-        "codeChatCredsApi": {
-          "id": "3",
-          "name": "CodeChat Creds"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "number": "={{ $json[\"number\"] }}",
-        "dalay": "={{ $json[\"options\"][\"delay\"] }}",
-        "operation": "locationMessage",
-        "locationNameProperty": "={{ $json[\"locationMessage\"][\"name\"] }}",
-        "addressProperty": "={{ $json[\"locationMessage\"][\"address\"] }}",
-        "latitudeProperty": "={{ $json[\"locationMessage\"][\"latitude\"] }}",
-        "longitudeProperty": "={{ $json[\"locationMessage\"][\"longitude\"] }}"
-      },
-      "id": "5ec3f732-c114-4fed-9586-6c9f3f508aad",
-      "name": "CodeChat Api4",
-      "type": "n8n-nodes-codechat-wapi.codechatapi",
-      "typeVersion": 1,
-      "position": [
-        -4980,
-        -1340
-      ],
-      "credentials": {
-        "codeChatCredsApi": {
-          "id": "3",
-          "name": "CodeChat Creds"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "number": "={{ $json[\"number\"] }}",
-        "dalay": "={{ $json[\"options\"][\"delay\"] }}",
-        "operation": "mediaMessage",
-        "fileNameProperty": "={{ $json[\"mediaMessage\"][\"fileName\"] }}",
-        "caprionProperty": "={{ $json[\"mediaMessage\"][\"caption\"] }}",
-        "mediaProperty": "={{ $json[\"mediaMessage\"][\"media\"] }}"
-      },
-      "id": "3571931d-9eea-457d-8e39-e93ad031f89e",
-      "name": "CodeChat Api5",
-      "type": "n8n-nodes-codechat-wapi.codechatapi",
-      "typeVersion": 1,
-      "position": [
-        -4980,
-        -1160
-      ],
-      "credentials": {
-        "codeChatCredsApi": {
-          "id": "3",
-          "name": "CodeChat Creds"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "number": "={{ $json[\"number\"] }}",
-        "dalay": "={{ $json[\"options\"][\"delay\"] }}",
-        "operation": "mediaMessage",
-        "fileNameProperty": "={{ $json[\"mediaMessage\"][\"fileName\"] }}",
-        "caprionProperty": "={{ $json[\"mediaMessage\"][\"caption\"] }}",
-        "mediaProperty": "={{ $json[\"mediaMessage\"][\"media\"] }}"
-      },
-      "id": "75119162-922e-4542-a177-7bad7e197d04",
-      "name": "CodeChat Api6",
-      "type": "n8n-nodes-codechat-wapi.codechatapi",
-      "typeVersion": 1,
-      "position": [
-        -4980,
-        -980
-      ],
-      "credentials": {
-        "codeChatCredsApi": {
-          "id": "3",
-          "name": "CodeChat Creds"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "jsCode": "for (const item of $input.all()) {\n  if(item.json.body?.data?.message) {\n    const keys = Object.keys(item.json.body?.data?.message);\n    let messagetype;\n    for (const k of keys) {\n      if(k !== 'messageContextInfo') {\n        messagetype = k;\n        break;\n      }\n    }\n\n    item.json.body.data.message['type'] = messagetype;\n  }\n}\n\nreturn $input.all();"
-      },
-      "id": "96a2d99d-2daf-4e70-ac8c-717f3fb6f5c4",
-      "name": "Code",
-      "type": "n8n-nodes-base.code",
-      "typeVersion": 1,
-      "position": [
-        -5560,
-        -1680
-      ]
-    },
-    {
-      "parameters": {},
-      "id": "dd4bccc4-00ec-42a2-8fc2-9acae8642f7f",
-      "name": "Sticky Note",
-      "type": "n8n-nodes-base.stickyNote",
-      "typeVersion": 1,
-      "position": [
-        -5840,
-        -2060
-      ]
-    }
-  ],
-  "pinData": {
-    "On clicking 'execute'": [
-      {
-        "json": {
-          "number": "5531997853327",
-          "options": {
-            "delay": 1200,
-            "presence": "unavailable | available | compising | recording | paused"
-          },
-          "textMessage": {
-            "text": "ok"
-          },
-          "mediaMessage": {
-            "mediatype": "image | document | video | audio",
-            "fileName": "image.png",
-            "caption": "Description",
-            "media": "https://www.moongiant.com/monthlycombined/images/october-fb.jpg"
-          },
-          "buttonMessage": {
-            "title": "Tutle Button",
-            "description": "Description Button",
-            "footerText": "Footer Button",
-            "buttons": [
-              {
-                "buttonText": "Click here 1",
-                "buttonId": "1"
-              },
-              {
-                "buttonText": "Click here 2",
-                "buttonId": "2"
-              }
-            ]
-          },
-          "locationMessage": {
-            "name": "Moeda - MG",
-            "address": "🗺️ Moeda 🗺️",
-            "latitude": -20.32568196333534,
-            "longitude": -44.016271276581236
-          },
-          "listMessage": {
-            "title": "List Title",
-            "description": "List description",
-            "buttonText": "Click Here",
-            "footerText": "footer list\nhttps://examplelink.com.br",
-            "sections": [
-              {
-                "title": "Row tilte 01",
-                "rows": [
-                  {
-                    "title": "Title row 01",
-                    "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,",
-                    "rowId": "rowId 001"
-                  },
-                  {
-                    "title": "Title row 02",
-                    "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,",
-                    "rowId": "rowId 002"
-                  }
-                ]
-              },
-              {
-                "title": "Row tilte 02",
-                "rows": [
-                  {
-                    "title": "Title row 01",
-                    "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,",
-                    "rowId": "rowId 001"
-                  },
-                  {
-                    "title": "Title row 02",
-                    "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,",
-                    "rowId": "rowId 002"
-                  }
-                ]
-              }
-            ]
-          },
-          "contactMessage": [
-            {
-              "fullName": "Contact Name 1",
-              "wuid": "553198882221",
-              "phoneNumber": "+55 31 9 8888-2221"
-            },
-            {
-              "fullName": "Contact Name 2",
-              "wuid": "5531988882222",
-              "phoneNumber": "+55 31 9 8888-2222"
-            },
-            {
-              "fullName": "Contact Name 3",
-              "wuid": "5531988882223",
-              "phoneNumber": "+55 31 9 8888-2223"
-            }
-          ]
-        }
-      }
-    ]
-  },
-  "connections": {
-    "On clicking 'execute'": {
-      "main": [
-        [
-          {
-            "node": "CodeChat Api",
-            "type": "main",
-            "index": 0
-          },
-          {
-            "node": "CodeChat Api1",
-            "type": "main",
-            "index": 0
-          },
-          {
-            "node": "CodeChat Api2",
-            "type": "main",
-            "index": 0
-          },
-          {
-            "node": "CodeChat Api3",
-            "type": "main",
-            "index": 0
-          },
-          {
-            "node": "CodeChat Api4",
-            "type": "main",
-            "index": 0
-          },
-          {
-            "node": "CodeChat Api5",
-            "type": "main",
-            "index": 0
-          },
-          {
-            "node": "CodeChat Api6",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Webhook": {
-      "main": [
-        [
-          {
-            "node": "Code",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    }
-  },
-  "active": false,
-  "settings": {
-    "timezone": "America/Sao_Paulo",
-    "saveExecutionProgress": true,
-    "saveManualExecutions": true,
-    "callerPolicy": "any"
-  },
-  "versionId": "efd3fe0e-468f-46e0-ba69-341a52710ecc",
-  "id": 1,
-  "meta": {
-    "instanceId": "1f3206de3ac125461e5202511c6317795b5b895d73aa227072a470c030cd2159"
-  },
-  "tags": [
-    {
-      "createdAt": "2022-12-09T22:13:44.901Z",
-      "updatedAt": "2022-12-09T22:13:44.901Z",
-      "id": "1",
-      "name": "send message"
-    }
-  ]
+	"name": "CodeChat",
+	"nodes": [
+		{
+			"parameters": {},
+			"id": "75981bf7-20dd-4163-a2ac-1c4a4fe14efa",
+			"name": "On clicking 'execute'",
+			"type": "n8n-nodes-base.manualTrigger",
+			"typeVersion": 1,
+			"position": [
+				-5460,
+				-2340
+			]
+		},
+		{
+			"parameters": {
+				"httpMethod": "POST",
+				"path": "f21c9cbb-f530-4172-988f-cdc315104fc3",
+				"options": {}
+			},
+			"id": "bf6d3bad-91e3-4130-8406-41d8260256a3",
+			"name": "Webhook",
+			"type": "n8n-nodes-base.webhook",
+			"typeVersion": 1,
+			"position": [
+				-5860,
+				-1860
+			],
+			"webhookId": "f21c9cbb-f530-4172-988f-cdc315104fc3"
+		},
+		{
+			"parameters": {
+				"jsCode": "for (const item of $input.all()) {\n  if(item.json.body?.data?.message) {\n    const keys = Object.keys(item.json.body?.data?.message);\n    let messagetype;\n    for (const k of keys) {\n      if(k !== 'messageContextInfo') {\n        messagetype = k;\n        break;\n      }\n    }\n\n    item.json.body.data.message['type'] = messagetype;\n  }\n}\n\nreturn $input.all();"
+			},
+			"id": "96a2d99d-2daf-4e70-ac8c-717f3fb6f5c4",
+			"name": "Code",
+			"type": "n8n-nodes-base.code",
+			"typeVersion": 1,
+			"position": [
+				-5520,
+				-1860
+			]
+		},
+		{
+			"parameters": {
+				"number": "={{ $json[\"number\"] }}",
+				"dalay": "={{ $json[\"options\"][\"delay\"] }}",
+				"textProperty": "={{ $json[\"textMessage\"][\"text\"] }}"
+			},
+			"id": "20dc1415-79d4-41a5-9d1b-06b9a25b5532",
+			"name": "CodeChat Api",
+			"type": "n8n-nodes-codechat-wapi.CodeChatApi",
+			"typeVersion": 1,
+			"position": [
+				-5080,
+				-2340
+			],
+			"credentials": {
+				"codeChatCredsApi": {
+					"id": "3",
+					"name": "CodeChat Creds"
+				}
+			}
+		},
+		{
+			"parameters": {
+				"number": "={{ $json[\"number\"] }}",
+				"dalay": "={{ $json[\"options\"][\"delay\"] }}",
+				"operation": "contactMessage",
+				"contactsProperty": "={{ $json[\"contactMessage\"] }}"
+			},
+			"id": "3dcf14f4-3d05-4b70-a8bb-e1797855694c",
+			"name": "CodeChat Api1",
+			"type": "n8n-nodes-codechat-wapi.CodeChatApi",
+			"typeVersion": 1,
+			"position": [
+				-5080,
+				-2160
+			],
+			"credentials": {
+				"codeChatCredsApi": {
+					"id": "3",
+					"name": "CodeChat Creds"
+				}
+			}
+		},
+		{
+			"parameters": {
+				"number": "={{ $json[\"number\"] }}",
+				"dalay": "={{ $json[\"options\"][\"delay\"] }}",
+				"operation": "listMessage",
+				"titleProperty": "={{ $json[\"listMessage\"][\"title\"] }}",
+				"descriptionProperty": "={{ $json[\"listMessage\"][\"description\"] }}",
+				"buttonTextProperty": "={{ $json[\"listMessage\"][\"buttonText\"] }}",
+				"footerTextProperty": "={{ $json[\"listMessage\"][\"footerText\"] }}",
+				"sectionProperty": "={{ $json[\"listMessage\"][\"sections\"] }}"
+			},
+			"id": "32988096-8db2-44f5-9733-30555b3ce5b1",
+			"name": "CodeChat Api2",
+			"type": "n8n-nodes-codechat-wapi.CodeChatApi",
+			"typeVersion": 1,
+			"position": [
+				-5080,
+				-1980
+			],
+			"credentials": {
+				"codeChatCredsApi": {
+					"id": "3",
+					"name": "CodeChat Creds"
+				}
+			}
+		},
+		{
+			"parameters": {
+				"number": "={{ $json[\"number\"] }}",
+				"dalay": "={{ $json[\"options\"][\"delay\"] }}",
+				"operation": "locationMessage",
+				"locationNameProperty": "={{ $json[\"locationMessage\"][\"name\"] }}",
+				"addressProperty": "={{ $json[\"locationMessage\"][\"address\"] }}",
+				"latitudeProperty": "={{ $json[\"locationMessage\"][\"latitude\"] }}",
+				"longitudeProperty": "={{ $json[\"locationMessage\"][\"longitude\"] }}"
+			},
+			"id": "183552d3-6a75-442e-a374-b680675bade8",
+			"name": "CodeChat Api3",
+			"type": "n8n-nodes-codechat-wapi.CodeChatApi",
+			"typeVersion": 1,
+			"position": [
+				-5080,
+				-1800
+			],
+			"credentials": {
+				"codeChatCredsApi": {
+					"id": "3",
+					"name": "CodeChat Creds"
+				}
+			}
+		},
+		{
+			"parameters": {
+				"number": "={{ $json[\"number\"] }}",
+				"dalay": "={{ $json[\"options\"][\"delay\"] }}",
+				"operation": "buttonMessage",
+				"titleProperty": "={{ $json[\"buttonMessage\"][\"title\"] }}",
+				"descriptionProperty": "={{ $json[\"buttonMessage\"][\"description\"] }}",
+				"footerTextProperty": "={{ $json[\"buttonMessage\"][\"footerText\"] }}",
+				"buttonsProperty": "={{ $json[\"buttonMessage\"][\"buttons\"] }}",
+				"mediaMessageProperty": {
+					"mediaProperty": {
+						"fileNameProperty": "={{ $json[\"mediaMessage\"][\"fileName\"] }}",
+						"mediaProperty": "={{ $json[\"mediaMessage\"][\"media\"] }}"
+					}
+				}
+			},
+			"id": "85a0285b-730a-4edc-a7e6-1b44b67850a3",
+			"name": "CodeChat Api4",
+			"type": "n8n-nodes-codechat-wapi.CodeChatApi",
+			"typeVersion": 1,
+			"position": [
+				-5080,
+				-1620
+			],
+			"credentials": {
+				"codeChatCredsApi": {
+					"id": "3",
+					"name": "CodeChat Creds"
+				}
+			}
+		},
+		{
+			"parameters": {
+				"number": "={{ $json[\"number\"] }}",
+				"dalay": "={{ $json[\"options\"][\"delay\"] }}",
+				"operation": "mediaMessage",
+				"fileNameProperty": "={{ $json[\"mediaMessage\"][\"fileName\"] }}",
+				"caprionProperty": "={{ $json[\"mediaMessage\"][\"caption\"] }}",
+				"mediaProperty": "={{ $json[\"mediaMessage\"][\"media\"] }}"
+			},
+			"id": "e013c756-6d72-4550-8982-deab64c2ae8d",
+			"name": "CodeChat Api5",
+			"type": "n8n-nodes-codechat-wapi.CodeChatApi",
+			"typeVersion": 1,
+			"position": [
+				-5080,
+				-1440
+			],
+			"credentials": {
+				"codeChatCredsApi": {
+					"id": "3",
+					"name": "CodeChat Creds"
+				}
+			}
+		},
+		{
+			"parameters": {
+				"content": "## CodeChat - WhatsApp Api \n**Api:** https://github.com/code-chat-br/whatsapp-api\n**node:** https://github.com/jrCleber/n8n-codechat-wapi#readme",
+				"height": 107.08886618998983,
+				"width": 610.3779366700719
+			},
+			"id": "085bdf93-07e3-493d-a963-d19a38b36aff",
+			"name": "Sticky Note",
+			"type": "n8n-nodes-base.stickyNote",
+			"typeVersion": 1,
+			"position": {
+				"position": [
+					null,
+					null
+				]
+			}
+		}
+	],
+	"pinData": {
+		"On clicking 'execute'": [
+			{
+				"json": {
+					"number": "5531997853327",
+					"options": {
+						"delay": 1200,
+						"presence": "unavailable | available | compising | recording | paused"
+					},
+					"textMessage": {
+						"text": "ok"
+					},
+					"mediaMessage": {
+						"mediatype": "image | document | video | audio",
+						"fileName": "image.png",
+						"caption": "Description",
+						"media": "https://www.moongiant.com/monthlycombined/images/october-fb.jpg"
+					},
+					"buttonMessage": {
+						"title": "Tutle Button",
+						"description": "Description Button",
+						"footerText": "Footer Button",
+						"buttons": [
+							{
+								"buttonText": "Click here 1",
+								"buttonId": "1"
+							},
+							{
+								"buttonText": "Click here 2",
+								"buttonId": "2"
+							}
+						]
+					},
+					"locationMessage": {
+						"name": "Moeda - MG",
+						"address": "🗺️ Moeda 🗺️",
+						"latitude": -20.32568196333534,
+						"longitude": -44.016271276581236
+					},
+					"listMessage": {
+						"title": "List Title",
+						"description": "List description",
+						"buttonText": "Click Here",
+						"footerText": "footer list\nhttps://examplelink.com.br",
+						"sections": [
+							{
+								"title": "Row tilte 01",
+								"rows": [
+									{
+										"title": "Title row 01",
+										"description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,",
+										"rowId": "rowId 001"
+									},
+									{
+										"title": "Title row 02",
+										"description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,",
+										"rowId": "rowId 002"
+									}
+								]
+							},
+							{
+								"title": "Row tilte 02",
+								"rows": [
+									{
+										"title": "Title row 01",
+										"description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,",
+										"rowId": "rowId 001"
+									},
+									{
+										"title": "Title row 02",
+										"description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,",
+										"rowId": "rowId 002"
+									}
+								]
+							}
+						]
+					},
+					"contactMessage": [
+						{
+							"fullName": "Contact Name 1",
+							"wuid": "553198882221",
+							"phoneNumber": "+55 31 9 8888-2221"
+						},
+						{
+							"fullName": "Contact Name 2",
+							"wuid": "5531988882222",
+							"phoneNumber": "+55 31 9 8888-2222"
+						},
+						{
+							"fullName": "Contact Name 3",
+							"wuid": "5531988882223",
+							"phoneNumber": "+55 31 9 8888-2223"
+						}
+					]
+				}
+			}
+		]
+	},
+	"connections": {
+		"Webhook": {
+			"main": [
+				[
+					{
+						"node": "Code",
+						"type": "main",
+						"index": 0
+					}
+				]
+			]
+		},
+		"On clicking 'execute'": {
+			"main": [
+				[
+					{
+						"node": "CodeChat Api",
+						"type": "main",
+						"index": 0
+					},
+					{
+						"node": "CodeChat Api1",
+						"type": "main",
+						"index": 0
+					},
+					{
+						"node": "CodeChat Api2",
+						"type": "main",
+						"index": 0
+					},
+					{
+						"node": "CodeChat Api3",
+						"type": "main",
+						"index": 0
+					},
+					{
+						"node": "CodeChat Api4",
+						"type": "main",
+						"index": 0
+					},
+					{
+						"node": "CodeChat Api5",
+						"type": "main",
+						"index": 0
+					}
+				]
+			]
+		}
+	},
+	"active": false,
+	"settings": {
+		"timezone": "America/Sao_Paulo",
+		"saveExecutionProgress": true,
+		"saveManualExecutions": true,
+		"callerPolicy": "any"
+	},
+	"versionId": "a8e56fa6-00f3-470e-8f46-9d1b26d0f6a3",
+	"id": 1,
+	"meta": {
+		"instanceId": "1f3206de3ac125461e5202511c6317795b5b895d73aa227072a470c030cd2159"
+	},
+	"tags": [
+		{
+			"createdAt": "2022-12-09T22:13:44.901Z",
+			"updatedAt": "2022-12-09T22:13:44.901Z",
+			"id": "1",
+			"name": "send message"
+		}
+	]
 }
