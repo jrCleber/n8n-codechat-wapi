@@ -5,6 +5,8 @@
 ![n8n-node-codechat-wapi](https://img.shields.io/npm/v/n8n-nodes-codechat-wapi?label=n8n-nodes-codechat-wapi&logo=codechat)
 ![License](https://img.shields.io/npm/l/n8n-nodes-codechat-wapi)
 [![n8n](https://img.shields.io/badge/n8n-community-F94B72)](https://community.n8n.io/)
+![dt](https://img.shields.io/npm/dt/n8n-nodes-codechat-wapi)
+![dw](https://img.shields.io/npm/dw/n8n-nodes-codechat-wapi)
 ![codesize](https://img.shields.io/github/languages/code-size/jrcleber/n8n-codechat-wapi)
 
 </div>
