@@ -9,7 +9,7 @@ export type Credentials = {
 	baseUrl: string;
 	authType: 'jwt' | 'apikey';
 	authJwt?: string;
-	authApikey?: string;
+	apikey?: string;
 };
 
 export namespace wa {

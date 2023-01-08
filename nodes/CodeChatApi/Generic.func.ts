@@ -28,8 +28,8 @@ export async function sendErrorPostReceive(
 
 	const node = this.getNode();
 	const creds = (await this.getCredentials('codeChatCredsApi')) as Credentials;
-	const key = creds.authType === 'jwt' ? 'authJwt' : 'authApikey';
-	creds[key] = creds.authType === 'jwt' ? 'Bearer ' + creds.authJwt : creds.authApikey;
+	const key = creds.authType === 'jwt' ? 'authJwt' : 'apikey';
+	creds[key] = creds.authType === 'jwt' ? 'Bearer ' + creds.authJwt : creds.apikey;
 	Object.assign(node.credentials as {}, { creds });
 
 	throw {
@@ -50,7 +50,7 @@ export async function setAutHeader(
 	const creds = (await this.getCredentials('codeChatCredsApi')) as Credentials;
 
 	const header = creds.authType === 'jwt' ? 'Authorization' : 'apikey';
-	const value = creds.authType === 'jwt' ? 'Bearer ' + creds.authJwt : creds.authApikey;
+	const value = creds.authType === 'jwt' ? 'Bearer ' + creds.authJwt : creds.apikey;
 	Object.assign(requestOpyions.headers as {}, { [header]: value });
 
 	return requestOpyions;
