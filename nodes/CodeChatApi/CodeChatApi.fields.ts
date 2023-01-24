@@ -6,7 +6,7 @@ const optionsProperties: INodeProperties[] = [
 		displayName: 'Delay',
 		name: 'dalay',
 		type: 'number',
-		default: '',
+		default: 0,
 		placeholder: '1200',
 		hint: 'milliseconds - optional',
 		description: 'Enter the delay value in milliseconds for message delivery',
@@ -34,7 +34,7 @@ const optionsProperties: INodeProperties[] = [
 			},
 			{
 				name: 'Composing',
-				value: 'compising',
+				value: 'composing',
 			},
 			{
 				name: 'Empty',
