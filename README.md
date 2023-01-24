@@ -1,7 +1,7 @@
 <div align="center">
 
-[![Telegram](https://img.shields.io/badge/Group-Telegram-%2333C1FF)](https://t.me/codechatBR)
-[![Whatsapp](https://img.shields.io/badge/WhatsApp-message-%2322BC18)](https://api.whatsapp.com/send?phone=5531995918699)
+[![Telegram Group](https://img.shields.io/badge/Group-Telegram-%2333C1FF)](https://t.me/codechatBR)
+[![Whatsapp Group](https://img.shields.io/badge/WhatsApp-message-%2322BC18)](https://chat.whatsapp.com/HyO8X8K0bAo0bfaeW8bhY5)
 ![n8n-node-codechat-wapi](https://img.shields.io/npm/v/n8n-nodes-codechat-wapi?label=n8n-nodes-codechat-wapi&logo=codechat)
 ![License](https://img.shields.io/npm/l/n8n-nodes-codechat-wapi)
 [![n8n](https://img.shields.io/badge/n8n-community-F94B72)](https://community.n8n.io/)
