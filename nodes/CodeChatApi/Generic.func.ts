@@ -70,12 +70,22 @@ export async function adjustOptionalFields(
 	return requestOpyions;
 }
 
-export async function prepare(
+export async function mediaMessage(
 	this: IExecuteSingleFunctions,
 	requestOpyions: IHttpRequestOptions,
 ): Promise<IHttpRequestOptions> {
-	console.log('BODY: ', requestOpyions.body);
-	console.log('REQUEST: ', requestOpyions);
+	const params = this.getNode().parameters;
+	const creds = (await this.getCredentials('codeChatCredsApi')) as Credentials;
+	if(params?.mediaType === 'waAudio') {
+		requestOpyions.url = `/message/sendWhatsAppAudio/${creds.instanceName}`;
+		const body = {  ...(requestOpyions.body as any) };
+		delete body?.mediaMessage;
+		body.audioMessage = {
+			audio: (requestOpyions.body as any)?.mediaMessage.media,
+		}
+		requestOpyions.body = { ...body }
+		console.log('REQUEST: ', requestOpyions);
+	}
 
 	return requestOpyions;
 }

@@ -1,5 +1,5 @@
 import { INodeProperties } from 'n8n-workflow';
-import { requestURL } from './Generic.func';
+import { mediaMessage, requestURL } from './Generic.func';
 
 const optionsProperties: INodeProperties[] = [
 	{
@@ -160,7 +160,7 @@ const textProperties: INodeProperties[] = [
 const mediaProperties: INodeProperties[] = [
 	{
 		displayName: 'Media Type',
-		name: 'mediaTypeProerty',
+		name: 'mediaType',
 		required: true,
 		type: 'options',
 		default: 'image',
@@ -169,6 +169,7 @@ const mediaProperties: INodeProperties[] = [
 			{ name: 'Document', value: 'document' },
 			{ name: 'Video', value: 'video' },
 			{ name: 'Audio', value: 'audio' },
+			{ name: 'WhatsApp Audio', value: 'waAudio' }
 		],
 		displayOptions: {
 			show: {
@@ -191,6 +192,7 @@ const mediaProperties: INodeProperties[] = [
 			show: {
 				resource: ['sendMessage'],
 				operation: ['mediaMessage'],
+				mediaType: ['image','document', 'video', 'audio']
 			},
 		},
 		routing: {
@@ -207,6 +209,7 @@ const mediaProperties: INodeProperties[] = [
 			show: {
 				resource: ['sendMessage'],
 				operation: ['mediaMessage'],
+				mediaType: ['image','document', 'video']
 			},
 		},
 		routing: {
@@ -217,6 +220,7 @@ const mediaProperties: INodeProperties[] = [
 	{
 		displayName: 'Media',
 		name: 'mediaProperty',
+		placeholder: 'url or base64',
 		description: 'URL or base64',
 		required: true,
 		type: 'string',
@@ -225,6 +229,7 @@ const mediaProperties: INodeProperties[] = [
 			show: {
 				resource: ['sendMessage'],
 				operation: ['mediaMessage'],
+				mediaType: ['image','document', 'video', 'audio', 'waAudio']
 			},
 		},
 		routing: {
@@ -248,6 +253,7 @@ const mediaProperties: INodeProperties[] = [
 				url: '=' + requestURL('sendMedia'),
 				method: 'POST',
 			},
+			send: { preSend: [mediaMessage] }
 		},
 	},
 ];
