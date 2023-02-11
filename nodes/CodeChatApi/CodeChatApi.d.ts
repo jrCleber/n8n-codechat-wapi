@@ -40,4 +40,11 @@ export namespace wa {
 			}[];
 		}[];
 	};
+
+	export type MediaMessge = {
+		mediaMessage: {
+			mediaType: string,
+			media: string,
+		}
+	}
 }

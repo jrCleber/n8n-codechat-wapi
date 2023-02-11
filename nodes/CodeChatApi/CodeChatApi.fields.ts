@@ -169,7 +169,7 @@ const mediaProperties: INodeProperties[] = [
 			{ name: 'Document', value: 'document' },
 			{ name: 'Video', value: 'video' },
 			{ name: 'Audio', value: 'audio' },
-			{ name: 'WhatsApp Audio', value: 'waAudio' }
+			{ name: 'WhatsApp Audio', value: 'waAudio' },
 		],
 		displayOptions: {
 			show: {

@@ -78,13 +78,12 @@ export async function mediaMessage(
 	const creds = (await this.getCredentials('codeChatCredsApi')) as Credentials;
 	if(params?.mediaType === 'waAudio') {
 		requestOpyions.url = `/message/sendWhatsAppAudio/${creds.instanceName}`;
-		const body = {  ...(requestOpyions.body as any) };
-		delete body?.mediaMessage;
-		body.audioMessage = {
-			audio: (requestOpyions.body as any)?.mediaMessage.media,
+		const body = {  ...(requestOpyions.body as wa.MediaMessge) };
+		requestOpyions.body = {
+			audioMessage: {
+				audio: body.mediaMessage?.media
+			}
 		}
-		requestOpyions.body = { ...body }
-		console.log('REQUEST: ', requestOpyions);
 	}
 
 	return requestOpyions;
