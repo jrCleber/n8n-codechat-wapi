@@ -42,6 +42,8 @@ export namespace wa {
 	};
 
 	export type MediaMessge = {
+		number:string,
+		options: OptionsMessage,
 		mediaMessage: {
 			mediaType: string,
 			media: string,

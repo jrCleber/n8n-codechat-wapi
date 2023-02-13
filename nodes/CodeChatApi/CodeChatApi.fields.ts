@@ -165,10 +165,10 @@ const mediaProperties: INodeProperties[] = [
 		type: 'options',
 		default: 'image',
 		options: [
-			{ name: 'Image', value: 'image' },
-			{ name: 'Document', value: 'document' },
-			{ name: 'Video', value: 'video' },
 			{ name: 'Audio', value: 'audio' },
+			{ name: 'Document', value: 'document' },
+			{ name: 'Image', value: 'image' },
+			{ name: 'Video', value: 'video' },
 			{ name: 'WhatsApp Audio', value: 'waAudio' },
 		],
 		displayOptions: {
@@ -192,7 +192,7 @@ const mediaProperties: INodeProperties[] = [
 			show: {
 				resource: ['sendMessage'],
 				operation: ['mediaMessage'],
-				mediaType: ['image','document', 'video', 'audio']
+				mediaType: ['audio', 'document', 'image', 'video'],
 			},
 		},
 		routing: {
@@ -209,7 +209,7 @@ const mediaProperties: INodeProperties[] = [
 			show: {
 				resource: ['sendMessage'],
 				operation: ['mediaMessage'],
-				mediaType: ['image','document', 'video']
+				mediaType: ['image','document', 'video'],
 			},
 		},
 		routing: {
@@ -229,7 +229,7 @@ const mediaProperties: INodeProperties[] = [
 			show: {
 				resource: ['sendMessage'],
 				operation: ['mediaMessage'],
-				mediaType: ['image','document', 'video', 'audio', 'waAudio']
+				mediaType: ['image','document', 'video', 'audio', 'waAudio'],
 			},
 		},
 		routing: {
@@ -253,7 +253,7 @@ const mediaProperties: INodeProperties[] = [
 				url: '=' + requestURL('sendMedia'),
 				method: 'POST',
 			},
-			send: { preSend: [mediaMessage] }
+			send: { preSend: [mediaMessage] },
 		},
 	},
 ];

@@ -80,10 +80,12 @@ export async function mediaMessage(
 		requestOpyions.url = `/message/sendWhatsAppAudio/${creds.instanceName}`;
 		const body = {  ...(requestOpyions.body as wa.MediaMessge) };
 		requestOpyions.body = {
+			number: body.number,
 			audioMessage: {
-				audio: body.mediaMessage?.media
-			}
-		}
+				audio: body.mediaMessage?.media,
+			},
+			options: body.options,
+		};
 	}
 
 	return requestOpyions;
